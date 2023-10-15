@@ -25,7 +25,7 @@ class _CounterState extends State<Counter> {
                   count++;
                 });
               },
-              text: '+',
+              icon: Icons.add,
             ),
           ),
           Padding(
@@ -49,7 +49,7 @@ class _CounterState extends State<Counter> {
                   });
                 }
               },
-              text: '-',
+              icon: Icons.minimize,
             ),
           ),
         ],
@@ -60,11 +60,11 @@ class _CounterState extends State<Counter> {
 
 class CustomButton extends StatelessWidget {
   final Function()? onPressed;
-  final String text;
+  final IconData icon;
 
   CustomButton({
     required this.onPressed,
-    required this.text,
+    required this.icon,
   });
   @override
   Widget build(BuildContext context) {
@@ -74,12 +74,11 @@ class CustomButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 20,
+      child: Center(
+        child: Icon(
+          icon,
+          size: 20,
           color: Colors.white,
-          fontFamily: 'Audiowide',
         ),
       ),
     );
